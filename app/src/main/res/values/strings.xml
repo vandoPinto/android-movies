@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Flix Movies</string>
+    <string name="login_signup_title">Cadastro</string>
+    <string name="redefinir_senha_title">Redefinir senha</string>
 </resources>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "595434605574",
+    "firebase_url": "https://flixmovie-18305.firebaseio.com",
+    "project_id": "flixmovie-18305",
+    "storage_bucket": "flixmovie-18305.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595434605574:android:ed82526600f7286c2d8787",
+        "android_client_info": {
+          "package_name": "br.com.moviestart.flixmovies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595434605574-hq11tlsm36jf6cr6vdku5u7bo4v8p7po.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT1zKCQTRh2md57U1Odl3yiP0xvxdOhJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595434605574-hq11tlsm36jf6cr6vdku5u7bo4v8p7po.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
