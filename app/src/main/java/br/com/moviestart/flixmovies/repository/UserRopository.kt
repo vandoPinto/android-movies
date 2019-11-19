@@ -1,4 +1,9 @@
 package br.com.moviestart.flixmovies.repository
 
-class UserRopository {
+import android.content.Context
+
+class UserRopository (context: Context) { //
+// : RetrofitBase(context) {
+    //stream code
+    //stream hod
 }
