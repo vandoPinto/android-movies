@@ -21,20 +21,6 @@
     android:layout_height="match_parent"
     tools:context=".view.fragment.LoginFragment">
 
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:text="LOGIN"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
     <EditText
         android:id="@+id/editText"
         android:layout_width="0dp"
@@ -43,7 +29,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
         android:ems="10"
-        android:hint="E-mail"
+        android:text="@={viewmodel.email}"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,12 +43,26 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
-        android:hint="Senha"
+        android:text="@={viewmodel.password}"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="LOGIN"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        android:onClick="@{() -> viewmodel.login()}" />
 
     <TextView
         android:id="@+id/textView2"
