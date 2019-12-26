@@ -20,10 +20,8 @@ class SplashActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             intent.change()
-        }, 5000)
+        }, 2000)
     }
-
-    //
 
     private fun Intent.change(){
         startActivity(this)

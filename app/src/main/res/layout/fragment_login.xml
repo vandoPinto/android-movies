@@ -19,15 +19,32 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
     tools:context=".view.fragment.LoginFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/logo"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
+        android:textColor="@color/colorAccent"
+        android:background="@drawable/login_edittext_bg"
+        android:textAlignment="center"
+        android:hint="E-mail"
+        android:textColorHint="#CCC"
         android:ems="10"
         android:text="@={viewmodel.email}"
         android:inputType="textEmailAddress"
@@ -38,13 +55,18 @@
     <EditText
         android:id="@+id/editText2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:textColor="@color/colorAccent"
+        android:background="@drawable/login_edittext_bg"
+        android:textAlignment="center"
         android:ems="10"
         android:text="@={viewmodel.password}"
         android:inputType="textPassword"
+        android:hint="Password"
+        android:textColorHint="#CCC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +78,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        android:background="@drawable/login_button_bg"
+        android:textColor="@color/colorAccent"
         android:text="LOGIN"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,6 +92,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
         android:text="Cadastro"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/tvForgot"
@@ -80,21 +105,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Esqueci minha senha"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         android:onClick="@{()->fragment.forgot()}"/>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        tools:src="@tools:sample/avatars" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
