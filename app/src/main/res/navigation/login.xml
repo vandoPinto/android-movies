@@ -10,21 +10,35 @@
         android:name="br.com.moviestart.flixmovies.view.fragment.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
+
         <action
             android:id="@+id/action_loginFragment_to_cadastroFragment"
             app:destination="@id/cadastroFragment" />
+            
         <action
             android:id="@+id/action_loginFragment_to_redefinirSenhaFragment"
             app:destination="@id/redefinirSenhaFragment" />
+
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/cadastroFragment"
         android:name="br.com.moviestart.flixmovies.view.fragment.CadastroFragment"
         android:label="fragment_cadastro"
         tools:layout="@layout/fragment_cadastro" />
+
     <fragment
         android:id="@+id/redefinirSenhaFragment"
         android:name="br.com.moviestart.flixmovies.view.fragment.RedefinirSenhaFragment"
         android:label="fragment_redefinir_senha"
         tools:layout="@layout/fragment_redefinir_senha" />
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="br.com.moviestart.flixmovies.view.fragment.MainFragment"
+        android:label="fragment_redefinir_senha"
+        tools:layout="@layout/activity_main" />
 </navigation>

@@ -22,7 +22,7 @@ private class AddHeaderInterceptor(val context: Context): Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val builder = chain.request().newBuilder()
-        val sharePref = context.getSharedPreferences("br.com.dynamiclight.androidmvvmi", MODE_PRIVATE)
+        val sharePref = context.getSharedPreferences("br.com.moviestart.flixmovies", MODE_PRIVATE)
         val token = sharePref.getString("token", "")
         if (token != "") {
             builder.addHeader("Authorization", "Bearer $token")

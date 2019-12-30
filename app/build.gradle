@@ -76,6 +76,8 @@ dependencies {
 
     /** Map Struct Mapper Library */
     implementation 'org.mapstruct:mapstruct:1.3.0.Final'
+    implementation 'com.google.firebase:firebase-database:19.1.0'
+
     kapt 'org.mapstruct:mapstruct-processor:1.3.0.Final'
 
     /** Picasso Image Loader */

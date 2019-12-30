@@ -6,18 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import br.com.moviestart.flixmovies.R
 import br.com.moviestart.flixmovies.databinding.FragmentLoginBinding
 import br.com.moviestart.flixmovies.viewmodel.LoginViewModel
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginFragment : Fragment() {
-
-//    companion object {
-//        fun newInstance() = LoginFragment()
-//    }
-
-//    private lateinit var viewModel: LoginViewModel
 
     private lateinit var binding: FragmentLoginBinding
 
@@ -43,6 +39,10 @@ class LoginFragment : Fragment() {
 
     fun register() {
         findNavController().navigate(R.id.action_loginFragment_to_cadastroFragment)
+    }
+
+    fun loginSucesso() {
+        findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
     }
 
 }

@@ -6,29 +6,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-import br.com.moviestart.flixmovies.R
+import br.com.moviestart.flixmovies.databinding.FragmentCadastroBinding
 import br.com.moviestart.flixmovies.viewmodel.CadastroViewModel
 
 class CadastroFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = CadastroFragment()
-    }
+    private lateinit var binding: FragmentCadastroBinding
 
-    private lateinit var viewModel: CadastroViewModel
+    private val viewModel: CadastroViewModel by lazy {
+        ViewModelProviders.of(this@CadastroFragment).get(CadastroViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_cadastro, container, false)
-    }
+        binding = FragmentCadastroBinding.inflate(inflater, container, false)
+        binding.fragment = this
+        binding.viewmodel = viewModel
+        binding.lifecycleOwner = this
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(CadastroViewModel::class.java)
-        // TODO: Use the ViewModel
+        return binding.root
     }
-
 }
