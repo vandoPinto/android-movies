@@ -14,6 +14,7 @@ class CadastroRepository(val context: Context) {
 
     private val auth = FirebaseAuth.getInstance()
     private val database = FirebaseDatabase.getInstance()
+    private val user = FirebaseAuth.getInstance().currentUser
 
     fun cadastro(name: String, email: String, password: String, callback: (result: AppResult<User>) -> Unit) {
 
@@ -21,11 +22,7 @@ class CadastroRepository(val context: Context) {
 
             auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task: Task<AuthResult> ->
                 if (task.isSuccessful) {
-
-                    val UserMovieFliex = database.getReference(name)
-
-                    UserMovieFliex.setValue(email)
-
+                    saveUser(name)
                     Toast.makeText(this.context, "Cadastro criado com sucesso", Toast.LENGTH_SHORT).show()
 
                 } else {
@@ -36,6 +33,13 @@ class CadastroRepository(val context: Context) {
 
         } else {
             Toast.makeText(this.context, "Tente novamente", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun saveUser(name: String) {
+        if (user != null) {
+            val UserMovieFlix = database.getReference(user.uid)
+            UserMovieFlix.setValue(name)
         }
     }
 }
