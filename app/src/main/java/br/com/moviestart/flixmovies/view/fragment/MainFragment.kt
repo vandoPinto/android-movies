@@ -44,16 +44,11 @@ class MainFragment : Fragment() {
 
     private fun updateLastMovies(result: AppResult<Array<Movie>>) {
         val recycleListView = binding.rvMovies
+
         recycleListView.layoutManager = LinearLayoutManager(context)
 
         when (result) {
             is AppResult.Success -> {
-                // TODO: UPDATE LAST MOVIES LIST
-
-                //result.data.forEach { movie ->
-                //    Log.d("MOVIES", movie.toString())
-                //}
-
                 recycleListView.adapter = MovieAdapter(result.data, viewModel)
             }
             is AppResult.Error -> {
@@ -65,6 +60,7 @@ class MainFragment : Fragment() {
                     ).show()
                 } else {
                     val genericError = this.context?.getString(R.string.generic_error)
+
                     Toast.makeText(
                         this.context,
                         genericError,

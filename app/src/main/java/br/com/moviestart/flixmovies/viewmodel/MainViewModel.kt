@@ -17,15 +17,9 @@ class MainViewModel(val app: Application) : AndroidViewModel(app) {
     val lastMovies = MutableLiveData<AppResult<Array<Movie>>>()
 
     fun getLastMovies() {
-
         disposable =
             interactor.lastMovies(MovieQueryOrderBy.PopularityAsc())
                 .subscribe { res, error ->
-
-                    res.forEach { movie ->
-                        movie.title = "Filme: ${movie.title}"
-                    }
-
                     if (error != null) {
                         lastMovies.value = AppResult.Error(error)
                         return@subscribe
@@ -33,7 +27,19 @@ class MainViewModel(val app: Application) : AndroidViewModel(app) {
 
                     lastMovies.value = AppResult.Success(res)
                 }
+    }
 
+    fun getTopRated() {
+        disposable =
+            interactor.topRated(MovieQueryOrderBy.PopularityAsc())
+                .subscribe { res, error ->
+                    if (error != null) {
+                        lastMovies.value = AppResult.Error(error)
+                        return@subscribe
+                    }
+
+                    lastMovies.value = AppResult.Success(res)
+                }
     }
 
     override fun onCleared() {

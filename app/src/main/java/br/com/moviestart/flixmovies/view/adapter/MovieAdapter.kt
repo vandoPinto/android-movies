@@ -3,14 +3,17 @@ package br.com.moviestart.flixmovies.view.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.moviestart.flixmovies.R
 import br.com.moviestart.flixmovies.databinding.ItemListMovieBinding
 import br.com.moviestart.flixmovies.domain.Movie
 import br.com.moviestart.flixmovies.viewmodel.MainViewModel
+import com.squareup.picasso.Picasso
 
 class MovieAdapter(
-    private val domiciles: Array<Movie>,
+    private val movies: Array<Movie>,
     private val viewModel: MainViewModel
 ) :
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
@@ -22,15 +25,30 @@ class MovieAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val movie = movies[position]
         val binding = holder.binding
-        binding.movie = domiciles[position]
+
+        binding.movie = movie
         binding.viewmodel = viewModel
+
         binding.executePendingBindings()
     }
 
-    override fun getItemCount(): Int = domiciles.size
+    override fun getItemCount(): Int = movies.size
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding: ItemListMovieBinding = ItemListMovieBinding.bind(view)
+    }
+
+    companion object {
+
+        @JvmStatic
+        @BindingAdapter("bind:imageUrl")
+        fun setImageUrl(
+            view: AppCompatImageView,
+            url: String
+        ) {
+            Picasso.get().load(url).into(view)
+        }
     }
 }

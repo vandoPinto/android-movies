@@ -41,8 +41,4 @@ class LoginFragment : Fragment() {
         findNavController().navigate(R.id.action_loginFragment_to_cadastroFragment)
     }
 
-    fun loginSucesso() {
-        findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
-    }
-
 }

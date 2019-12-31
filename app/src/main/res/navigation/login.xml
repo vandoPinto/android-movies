@@ -19,9 +19,9 @@
             android:id="@+id/action_loginFragment_to_redefinirSenhaFragment"
             app:destination="@id/redefinirSenhaFragment" />
 
-        <action
-            android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_loginFragment_to_mainFragment"-->
+<!--            app:destination="@id/mainFragment" />-->
     </fragment>
 
     <fragment
@@ -36,9 +36,9 @@
         android:label="fragment_redefinir_senha"
         tools:layout="@layout/fragment_redefinir_senha" />
 
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="br.com.moviestart.flixmovies.view.fragment.MainFragment"
-        android:label="fragment_redefinir_senha"
-        tools:layout="@layout/activity_main" />
+<!--    <fragment-->
+<!--        android:id="@+id/mainFragment"-->
+<!--        android:name="br.com.moviestart.flixmovies.view.fragment.MainFragment"-->
+<!--        android:label="fragment_redefinir_senha"-->
+<!--        tools:layout="@layout/fragment_main" />-->
 </navigation>

@@ -12,11 +12,14 @@ import org.mapstruct.factory.Mappers
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+// EXEMPLO: https://api.themoviedb.org/3/discover/movie?api_key=6971dd639f7fd4f970ce01dcf193dc8c
 interface MovieService {
 
     @GET("discover/movie")
     fun lastMovies(@Query("sort_by") sortBy: String): Single<MovieResultDTO>
 
+    @GET("movie/top_rated")
+    fun topRated(@Query("sort_by") sortBy: String): Single<MovieResultDTO>
 }
 
 class MovieRepository(val context: Context) :
@@ -29,8 +32,13 @@ class MovieRepository(val context: Context) :
 
         return movieService.lastMovies(sortBy.value)
             .map { result ->
+                // URL FINAL EXEMPLO: http://image.tmdb.org/t/p/w500/qdfARIhgpgZOBh3vfNhWS4hmSo3.jpg
+                result.movies.forEach {
+                    it.poster_path = "http://image.tmdb.org/t/p/w500${it.poster_path}"
+                }
 
                 val list = mutableListOf<Movie>()
+
                 result.movies.forEach {
                     list.add(domainMapper.toDomain(it))
                 }
@@ -39,6 +47,22 @@ class MovieRepository(val context: Context) :
             }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+    }
 
+    fun topRated(sortBy: MovieQueryOrderBy): Single<Array<Movie>> {
+        val domainMapper = Mappers.getMapper(MovieMapper::class.java)
+
+        return movieService.topRated(sortBy.value)
+            .map { result ->
+                val list = mutableListOf<Movie>()
+
+                result.movies.forEach {
+                    list.add(domainMapper.toDomain(it))
+                }
+
+                list.toTypedArray()
+            }
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
     }
 }
