@@ -1,9 +1,7 @@
 package br.com.moviestart.flixmovies.repository
 
 import android.content.Context
-import android.widget.Toast
 import br.com.moviestart.flixmovies.AppResult
-import br.com.moviestart.flixmovies.R
 import br.com.moviestart.flixmovies.domain.User
 import com.google.firebase.auth.FirebaseAuth
 
@@ -16,10 +14,10 @@ class RedefinirSenhaRepository(val context: Context) {
 
         auth.sendPasswordResetEmail(emailAddress).addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                val email = User(
+                val mail = User(
                     email = email
                 )
-                callback(AppResult.Success(email))
+                callback(AppResult.Success(mail))
             } else {
                 callback(AppResult.Error(task.exception))
             }

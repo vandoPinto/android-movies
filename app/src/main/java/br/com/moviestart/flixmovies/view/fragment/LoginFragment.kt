@@ -13,7 +13,6 @@ import br.com.moviestart.flixmovies.AppResult
 import br.com.moviestart.flixmovies.R
 import br.com.moviestart.flixmovies.databinding.FragmentLoginBinding
 import br.com.moviestart.flixmovies.viewmodel.LoginViewModel
-import com.google.firebase.auth.FirebaseAuth
 
 class LoginFragment : Fragment() {
 

@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.observe
-import androidx.navigation.fragment.findNavController
 import br.com.moviestart.flixmovies.AppResult
 import br.com.moviestart.flixmovies.R
 import br.com.moviestart.flixmovies.databinding.FragmentCadastroBinding
