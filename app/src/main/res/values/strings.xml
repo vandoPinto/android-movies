@@ -3,7 +3,13 @@
     <string name="login_signup_title">Cadastro</string>
     <string name="redefinir_senha_title">Redefinir senha</string>
 
+    <string name="cadastro_sucess">Conta criada com sucesso</string>
+    <string name="cadastro_error">Não foi possível criar conta</string>
 
+    <string name="email_sucess">Email enviado com sucesso</string>
+    <string name="email_error">Email não encontrado</string>
+
+    <string name="preencha_campos">Preencha todos os campos</string>
     <string name="generic_error">Não foi possível executar a operação</string>
 
     <string name="api_key">6971dd639f7fd4f970ce01dcf193dc8c</string>

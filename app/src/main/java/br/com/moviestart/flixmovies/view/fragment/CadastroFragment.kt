@@ -31,18 +31,19 @@ class CadastroFragment : Fragment() {
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
 
+        val genericError = this.context?.getString(R.string.generic_error)
+        val cadastroSucess = this.context?.getString(R.string.cadastro_sucess)
+        val cadastroError = this.context?.getString(R.string.cadastro_error)
+
         viewModel.result.observe(this@CadastroFragment) {
             when (it) {
                 is AppResult.Success -> {
-                    Toast.makeText(this.context, "Cadastro criado com sucesso", Toast.LENGTH_SHORT).show()
-//                    findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
-//                    activity?.finish()
+                    Toast.makeText(this.context, cadastroSucess, Toast.LENGTH_SHORT).show()
                 }
                 is AppResult.Error -> {
                     if (it.error != null) {
-                        Toast.makeText(this.context, "Erro ao tentar criar a conta", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this.context, cadastroError, Toast.LENGTH_SHORT).show()
                     }else {
-                        val genericError = this.context?.getString(R.string.generic_error)
                         Toast.makeText(this.context,genericError, Toast.LENGTH_LONG).show()
                     }
                 }

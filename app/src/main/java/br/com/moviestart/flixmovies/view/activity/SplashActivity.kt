@@ -50,11 +50,4 @@ class SplashActivity : AppCompatActivity() {
         startActivity(this)
         finish()
     }
-
-    private fun updateUserInfoAndUI() {
-        //start next activity
-        val intent = Intent(this@SplashActivity, MainActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
-    }
 }

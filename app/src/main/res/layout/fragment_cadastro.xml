@@ -22,25 +22,43 @@
     android:background="@drawable/login_bg"
     tools:context=".view.fragment.CadastroFragment">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".1" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:src="@mipmap/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:textColor="#EEE"
+        android:layout_marginTop="24dp"
         android:text="@string/login_signup_title"
-        app:layout_constraintBottom_toTopOf="@+id/editText4"
+        android:textColor="#EEE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Cadastro" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:text="Cadastrar Senha" />
+
 
     <EditText
         android:id="@+id/editText4"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
         android:background="@drawable/login_edittext_bg"
         android:ems="10"
         android:hint="Nome"
@@ -49,31 +67,30 @@
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textColorHint="#CCC"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
         android:id="@+id/editText5"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
-        android:textColor="@color/colorAccent"
         android:background="@drawable/login_edittext_bg"
-        android:textAlignment="center"
-        android:textColorHint="#CCC"
         android:ems="10"
         android:hint="E-mail"
-        android:text="@={viewmodel.email}"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        android:text="@={viewmodel.email}"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="#CCC"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
     <EditText
         android:id="@+id/editText7"
@@ -86,37 +103,30 @@
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
+        android:text="@={viewmodel.password}"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textColorHint="#CCC"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        android:text="@={viewmodel.password}" />
+        app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/login_button_bg"
         android:onClick="@{() -> viewmodel.cadastro()}"
-        android:text="Button"
+        android:text="Cadastrar"
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText7" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
