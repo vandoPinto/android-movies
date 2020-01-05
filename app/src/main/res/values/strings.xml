@@ -12,5 +12,7 @@
     <string name="preencha_campos">Preencha todos os campos</string>
     <string name="generic_error">Não foi possível executar a operação</string>
 
+    <string name="menu_list_reviews_label">MENU</string>
+
     <string name="api_key">6971dd639f7fd4f970ce01dcf193dc8c</string>
 </resources>

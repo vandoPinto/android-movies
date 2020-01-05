@@ -23,8 +23,8 @@ interface MovieService {
 }
 
 class MovieRepository(val context: Context) :
-    RetrofitBase(context, "https://api.themoviedb.org/3/")
-{
+    RetrofitBase(context, "https://api.themoviedb.org/3/") {
+
     private val movieService = retrofit.create(MovieService::class.java)
 
     fun lastMovies(sortBy: MovieQueryOrderBy): Single<Array<Movie>> {
